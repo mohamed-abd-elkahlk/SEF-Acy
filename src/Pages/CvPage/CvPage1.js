@@ -3,11 +3,17 @@ import Cv from '../../Components/CV/Cv'
 import img from '../../image/cloud.png'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
+import { useDispatch } from 'react-redux'
+import { setCV } from '../../Redux/reducer/CV'
+import { useState } from 'react'
 
 function CvPage1() {
+  const dispatch = useDispatch()
     const Navigate = useNavigate()
+    const [image, setImage] = useState('')
+
     const handleSubmit = (values) => {
-        console.log(values);
+      dispatch(setCV({...values, image}))
       };
     
       const formik = useFormik({
@@ -221,7 +227,7 @@ return (
           >
             Browse
           </label>
-          <input type="file" style={{ display: "none" }} id="personalPhoto" />
+          <input type="file" style={{ display: "none" }} onChange={(e)=>setImage(URL.createObjectURL(e.currentTarget.files[0]))} id="personalPhoto" />
         </p>
         <p className="text-secondary small-txt">
           Supported formates: JPEG, PNG, GIF, MP4, PDF, PSD, AI, Word, PPT

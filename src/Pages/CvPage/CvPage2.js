@@ -2,11 +2,12 @@ import React from 'react'
 import Cv from '../../Components/CV/Cv'
 import { useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik';
+import { setCV } from '../../Redux/reducer/CV';
 
 function CvPage2() {
     const Navigate = useNavigate();
     const handleSubmit = (values) => {
-        console.log(values);
+        setCV(values)
       };
     
       const formik = useFormik({

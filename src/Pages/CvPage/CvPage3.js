@@ -4,15 +4,18 @@ import { useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { useFormik } from 'formik'
+import { setCV } from '../../Redux/reducer/CV'
+import { useDispatch } from 'react-redux'
 
 function CvPage3() {
     const Navigate =useNavigate()
+    const  dispatch = useDispatch()
     const initialValues = {
-        Skills: [""],
+      Skills: [''],
       };
     
       const onSubmit = (values) => {
-        console.log(values.Skills);
+        dispatch(setCV(values))
       };
     
       const formik = useFormik({

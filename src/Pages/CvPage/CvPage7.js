@@ -1,7 +1,6 @@
 import React from 'react'
 import Cv from '../../Components/CV/Cv'
 import { useNavigate } from 'react-router-dom'
-import Form7 from '../../Components/CV/Form7'
 import { useFormik } from 'formik'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faTrashCan } from '@fortawesome/free-solid-svg-icons'
