@@ -7,10 +7,10 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { filterForid } from "../../Redux/reducer/Articles";
 const ArticleDetails = () => {
-  const { idArticle } = useParams()
-  const dispatch = useDispatch()
-  dispatch(filterForid(idArticle))
-  const article = useSelector(state => state.articles.ShowArticleDitelails)
+  const { idArticle } = useParams();
+  const dispatch = useDispatch();
+  dispatch(filterForid(idArticle));
+  const article = useSelector((state) => state.article.articles);
   return (
     <div className="container-fluied ">
       <div className="container">
@@ -43,7 +43,6 @@ const ArticleDetails = () => {
           <div className="container m-auto">
             <p className="m-auto mt-4 pb-5 col-sm-10 text-white">
               {article.explain}
-
             </p>
           </div>
         </div>

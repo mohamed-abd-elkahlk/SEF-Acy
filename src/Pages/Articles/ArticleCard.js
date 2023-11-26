@@ -6,9 +6,9 @@ import { faClock, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 
 const ArticleCard = ({ Filter }) => {
-  var articles = useSelector((state) => state.articles.allArticles)
-  if(Filter != 'AllData'){
-    articles = articles.filter((article) => article.type == Filter)
+  var articles = useSelector((state) => state.article.articles);
+  if (Filter != "AllData") {
+    articles = articles.filter((article) => article.type == Filter);
   }
   return (
     <div className="container">
@@ -16,10 +16,16 @@ const ArticleCard = ({ Filter }) => {
         <div className="container" key={item.id}>
           <div className="row">
             <div className="col-lg-4 ">
-              <img className="rounded col-12 mt-5 h-75 " src={item.img} alt="" />
+              <img
+                className="rounded col-12 mt-5 h-75 "
+                src={item.img}
+                alt=""
+              />
             </div>
             <div className="col-lg-8 pt-4">
-              <p className="text-uppercase mb-1 fs-3 text-white">{item.category}</p>
+              <p className="text-uppercase mb-1 fs-3 text-white">
+                {item.category}
+              </p>
               <div
                 className="border-bottom border-warning"
                 style={{ width: "60px" }}
